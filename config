@@ -232,7 +232,7 @@ bindsym $mod+r mode "resize"
 set $bgcolor #565f89
 set $abgcolor #7dcfff
 set $ibgcolor #1a1b26
-set $textcolor #c0caf5
+set $textcolor #1a1b26
 set $itextcolor #9aa5ce
 set $ubgcolor #f7768e
 
