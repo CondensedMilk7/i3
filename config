@@ -42,6 +42,7 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 exec --no-startup-id nm-applet
 
 # Use pactl to adjust volume in PulseAudio.
+# NOTE: Currently not used
 set $refresh_i3status killall -SIGUSR1 i3status
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10% && $refresh_i3status
@@ -53,8 +54,6 @@ bindsym XF86MonBrightnessUp exec light -A 10
 
 bindsym XF86MonBrightnessDown exec light -U 10
 
-# Take screenshot
-bindsym Print       exec scrot
 
 # Mod key
 set $mod Mod4
@@ -73,10 +72,8 @@ floating_modifier $mod
 # kill focused window
 bindsym $mod+q kill
 
-# Lock screen (i3lock + blur)
+# Lock screen (i3lock-color + blur)
 bindsym $mod+Ctrl+l exec i3lock --blur=8 --clock --time-size=80 --time-font="JetBrains Mono" --date-font="JetBrains Mono" --date-size=20 --time-color=7dcfff --date-color=7dcfff
-
-
 
 # Default Applications
 set $runmenu "rofi -modi drun,run -show drun"
@@ -84,6 +81,7 @@ set $terminal terminator
 set $browser firefox
 set $IDE code
 set $filemanager ranger
+set $screenshotapp scrot
 
 # Launch run menu
 bindsym $mod+d exec $runmenu
@@ -99,6 +97,9 @@ bindsym $mod+b exec $browser
 
 # Run file manager
 bindsym $mod+Shift+Return exec $filemanager
+
+# Take screenshot
+bindsym Print exec $screenshotapp
 
 # change focus
 bindsym $mod+$left focus left
@@ -246,7 +247,7 @@ client.urgent                   $ubgcolor       $ubgcolor               $textcol
 # finds out, if available)
 bar {
         position top
-        status_command i3blocks -c /home/pt/.config/i3blocks/i3blocks.conf
+        status_command i3blocks -c ~/.config/i3blocks/i3blocks.conf
        # i3bar_command i3bar --transparency
        # tray_output none
         colors {
