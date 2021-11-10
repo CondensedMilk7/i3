@@ -1,6 +1,8 @@
 # My i3 Configuration
 This is the configuration file for my i3 window manager.
 
+![2021-11-09-222307_1920x1080_scrot](https://user-images.githubusercontent.com/82287873/141136285-623f9a1a-5732-42ad-848e-e92c5474a1d6.png)
+
 ## Dependencies
 There are several applications that you should have installed in order for this
 configuration to work.
