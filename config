@@ -233,12 +233,13 @@ bindsym $mod+r mode "resize"
 set $bgcolor #565f89
 set $abgcolor #7dcfff
 set $ibgcolor #1a1b26
-set $textcolor #1a1b26
+set $textcolor #c0caf5
+set $atextcolor #1a1b26
 set $itextcolor #9aa5ce
 set $ubgcolor #f7768e
 
 #                               border          background              text            indicator
-client.focused                  $bgcolor        $abgcolor               $textcolor      $bgcolor
+client.focused                  $bgcolor        $abgcolor               $atextcolor      $bgcolor
 client.unfocused                $ibgcolor       $ibgcolor               $textcolor      $ibgcolor
 client.focused_inactive         $ibgcolor       $ibgcolor               $itextcolor      $ibgcolor
 client.urgent                   $ubgcolor       $ubgcolor               $textcolor      $ubgcolor
