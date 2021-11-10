@@ -69,8 +69,6 @@ set $right l
 # use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
-# start a terminal
-bindsym $mod+Return exec terminator
 
 # kill focused window
 bindsym $mod+q kill
@@ -79,25 +77,28 @@ bindsym $mod+q kill
 bindsym $mod+Ctrl+l exec i3lock --blur=8 --clock --time-size=80 --time-font="JetBrains Mono" --date-font="JetBrains Mono" --date-size=20 --time-color=7dcfff --date-color=7dcfff
 
 
-# start dmenu (a program launcher)
-# bindsym $mod+d exec --no-startup-id dmenu_run
-# A more modern dmenu replacement is rofi:
-bindsym $mod+d exec "rofi -modi drun,run -show drun"
-# There also is i3-dmenu-desktop which only displays applications shipping a
-# .desktop file. It is a wrapper around dmenu, so you need that installed.
-# bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 
-# Run VSCode
-bindsym $mod+c exec code
-
-# Default browser
+# Default Applications
+set $runmenu "rofi -modi drun,run -show drun"
+set $terminal terminator
 set $browser firefox
+set $IDE code
+set $filemanager ranger
+
+# Launch run menu
+bindsym $mod+d exec $runmenu
+
+# Run terminal
+bindsym $mod+Return exec $terminal
+
+# Run IDE
+bindsym $mod+c exec $IDE
 
 # Run browser
 bindsym $mod+b exec $browser
 
 # Run file manager
-bindsym $mod+Shift+Return exec ranger
+bindsym $mod+Shift+Return exec $filemanager
 
 # change focus
 bindsym $mod+$left focus left
