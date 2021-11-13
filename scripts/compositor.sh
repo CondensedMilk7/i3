@@ -1,3 +1,7 @@
 #!/usr/bin/env bash
-compton
-if [[ !${?} ]] then picom fi
+
+picom
+if [[ ${?} -ne 0 ]]
+then
+  compton
+fi

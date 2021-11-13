@@ -77,7 +77,7 @@ bindsym $mod+Ctrl+l exec i3lock --blur=8 --clock --time-size=80 --time-font="Jet
 
 # Default Applications
 set $runmenu "rofi -modi drun,run -show drun"
-set $terminal terminator
+set $terminal alacritty
 set $browser firefox
 set $IDE code
 set $filemanager ranger
