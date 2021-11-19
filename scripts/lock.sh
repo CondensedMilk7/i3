@@ -6,7 +6,7 @@ DEFAULT='#bb9af7'
 TEXT='#bb9af7'
 WRONG='#f7768e'
 VERIFYING='#7aa2f7'
-FONT=JetBrains Mono
+FONT=monospace
 SIZE=24
 
 i3lock \

@@ -91,6 +91,9 @@ bindsym $mod+b exec $browser
 # Run file manager
 bindsym $mod+Shift+Return exec $filemanager
 
+# Launch music player
+bindsym $mod+Shift+m exec $terminal ncmpcpp
+
 # Take screenshot
 bindsym Print exec $screenshotapp && notify-send "Screenshot taken"
 
@@ -239,21 +242,21 @@ client.urgent                   $ubgcolor       $ubgcolor               $textcol
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
-bar {
-        position top
-        font pango:FontAwesome, JetBrains Mono Regular 14
-        status_command i3blocks -c ~/.config/i3blocks/i3blocks.conf
-       # i3bar_command i3bar --transparency
-       # tray_output none
-        colors {
-                background $ibgcolor
-                separator #a9b1d6
-                #                       border          background      text
-                focused_workspace       $bgcolor        $bgcolor        $textcolor
-                inactive_workspace      $ibgcolor       $ibgcolor       $itextcolor
-                urgent_workspace        $ubgcolor       $ubgcolor       $textcolor
-        }
-}
+#bar {
+#        position top
+#        font pango:FontAwesome, JetBrains Mono Regular 14
+#        status_command i3blocks -c ~/.config/i3blocks/i3blocks.conf
+#       # i3bar_command i3bar --transparency
+#       # tray_output none
+#        colors {
+#                background $ibgcolor
+#                separator #a9b1d6
+#                #                       border          background      text
+#                focused_workspace       $bgcolor        $bgcolor        $textcolor
+#                inactive_workspace      $ibgcolor       $ibgcolor       $itextcolor
+#                urgent_workspace        $ubgcolor       $ubgcolor       $textcolor
+#        }
+#}
 
 #######################################################################
 # automatically start i3-config-wizard to offer the user to create a
@@ -265,10 +268,14 @@ bar {
 #
 #######################################################################
 # Wallpaper
-exec nitrogen --restore
+exec_always feh --bg-fill ~/Pictures/Wallpapers/vapor-city.jpg
 
 # Compositor (launches compton and if it fails, attempts picom)
 exec ~/.config/i3/scripts/compositor.sh
 
 # Polkit for mount access on nautilus file manager
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+
+# Polybar
+exec_always --no-startup-id ~/.config/polybar/launch.sh
+
