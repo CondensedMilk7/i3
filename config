@@ -73,7 +73,6 @@ set $runmenu "rofi -modi drun,run -show drun"
 set $terminal alacritty
 set $browser firefox
 set $IDE code
-set $filemanager ranger
 set $screenshotapp scrot
 
 # Launch run menu
@@ -89,7 +88,7 @@ bindsym $mod+c exec $IDE
 bindsym $mod+b exec $browser
 
 # Run file manager
-bindsym $mod+Shift+Return exec $filemanager
+bindsym $mod+Shift+Return exec $terminal -e ranger
 
 # Launch music player
 bindsym $mod+Shift+m exec $terminal ncmpcpp
@@ -268,7 +267,7 @@ client.urgent                   $ubgcolor       $ubgcolor               $textcol
 #
 #######################################################################
 # Wallpaper
-exec_always feh --bg-fill ~/Pictures/Wallpapers/vapor-city.jpg
+exec_always feh --bg-fill ~/Pictures/Wallpapers/synthwave.jpg
 
 # Compositor (launches compton and if it fails, attempts picom)
 exec ~/.config/i3/scripts/compositor.sh
@@ -279,3 +278,5 @@ exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 # Polybar
 exec_always --no-startup-id ~/.config/polybar/launch.sh
 
+# mpd
+exec_always --no-startup-id mpd
