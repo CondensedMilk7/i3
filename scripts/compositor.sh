@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
 picom
 if [[ ${?} -ne 0 ]]
