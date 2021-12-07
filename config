@@ -276,9 +276,6 @@ exec_always feh --bg-fill ~/Pictures/Wallpapers/synthwave.jpg
 # Compositor (launches compton and if it fails, attempts picom)
 exec ~/.config/i3/scripts/compositor.sh
 
-# Polkit for mount access on nautilus file manager
-exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
-
 # Polybar
 exec_always --no-startup-id ~/.config/polybar/launch.sh
 

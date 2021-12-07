@@ -1,6 +1,6 @@
 #!/bin/bash
 
-noteFilename="${HOME}/notes/note-$(date +%Y-%m-%d).md"
+noteFilename="${HOME}/notes/quicknotes/note-$(date +%Y-%m-%d).md"
 
 if [ ! -f $noteFilename ]
 then
