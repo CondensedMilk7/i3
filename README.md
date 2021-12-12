@@ -16,15 +16,13 @@ or [my Polybar](https://github.com/CondensedMilk7/polybar)
 ### Default Applications and Utilities (optional, can be substituted):
 * light (for adjusting screen brightness)
 * rofi (run menu, can be substituted with dmenu)
-* terminator (my terminal emulator of choice)
+* alacritty (my terminal emulator of choice)
 * firefox
 * visual studio code
 * ranger (file manager)
 * scrot (screenshot app)
 * [i3lock-color](https://github.com/Raymo111/i3lock-color)
-(lockscreen, can be substituted with regular i3lock, but change its
-exec function in the i3 config so that it passes valid options)
-
+for custom lock script in the scripts folder
 
 ### Fonts
 * JetBrains Mono (for all around text)
