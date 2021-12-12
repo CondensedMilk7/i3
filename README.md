@@ -10,7 +10,7 @@ configuration to work.
 ### Essentials:
 * i3-gaps (duh)
 * [My i3blocks](https://github.com/CondensedMilk7/i3blocks) 
-(for statusbar)
+or [my Polybar](https://github.com/CondensedMilk7/polybar)
 * compton or picom
 
 ### Default Applications and Utilities (optional, can be substituted):
