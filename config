@@ -277,7 +277,7 @@ exec_always feh --bg-fill ~/Pictures/Wallpapers/synthwave.jpg
 exec ~/.config/i3/scripts/compositor.sh
 
 # Polybar
-exec_always --no-startup-id ~/.config/polybar/launch.sh
+exec_always --no-startup-id ~/.config/polybar/launch-multi-monitor.sh
 
 # mpd
 exec_always --no-startup-id mpd
