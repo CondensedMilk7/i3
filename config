@@ -71,7 +71,7 @@ bindsym $mod+Ctrl+l exec ~/.config/i3/scripts/lock.sh
 # Default Applications
 set $runmenu "rofi -modi drun,run -show drun"
 set $terminal alacritty
-set $browser firefox
+set $browser brave
 set $IDE code
 set $screenshotapp scrot
 
@@ -271,7 +271,7 @@ client.urgent                   $ubgcolor       $ubgcolor               $textcol
 #
 #######################################################################
 # Wallpaper
-exec_always feh --bg-fill ~/Pictures/Wallpapers/synthwave.jpg
+exec_always feh --bg-fill ~/Pictures/Wallpapers/abstract-neon-sunset-landscape-digital-art-minimalist-uhdpaper.com-4K-54.jpg
 
 # Compositor (launches compton and if it fails, attempts picom)
 exec ~/.config/i3/scripts/compositor.sh
