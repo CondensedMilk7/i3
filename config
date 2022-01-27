@@ -66,6 +66,9 @@ floating_modifier $mod
 # kill focused window
 bindsym $mod+q kill
 
+# Power off PC
+bindsym $mod+Shift+Control+x exec poweroff
+
 # Lock screen (i3lock-color + blur)
 bindsym $mod+Ctrl+l exec ~/.config/i3/scripts/lock.sh
 # Default Applications
@@ -270,11 +273,18 @@ client.urgent                   $ubgcolor       $ubgcolor               $textcol
 # ~/.i3/config.
 #
 #######################################################################
-# Wallpaper
-exec_always feh --bg-fill ~/Pictures/Wallpapers/abstract-neon-sunset-landscape-digital-art-minimalist-uhdpaper.com-4K-54.jpg
+#
+# Wallpaper file
+set $wallpaper ~/Pictures/Wallpapers/abstract-neon-sunset-landscape-digital-art-minimalist-uhdpaper.com-4K-54.jpg
+
+# Set wallpaper
+exec_always feh --bg-fill $wallpaper
 
 # Compositor (launches compton and if it fails, attempts picom)
 exec ~/.config/i3/scripts/compositor.sh
+
+# Use full rgb spectrum for hdmi output
+exec xrandr --output HDMI1 --set "BroadcastRGB" "Full"
 
 # Polybar
 exec_always --no-startup-id ~/.config/polybar/launch-multi-monitor.sh

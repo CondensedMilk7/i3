@@ -6,6 +6,7 @@ DEFAULT='#bb9af7'
 TEXT='#bb9af7'
 WRONG='#f7768e'
 VERIFYING='#7aa2f7'
+BACKGROUND="#1a1b27"
 FONT=monospace
 SIZE=24
 
@@ -16,7 +17,7 @@ i3lock \
 --insidewrong-color=$CLEAR   \
 --ringwrong-color=$WRONG     \
 \
---inside-color=$BLANK        \
+--inside-color=$BACKGROUND   \
 --ring-color=$DEFAULT        \
 --line-color=$BLANK          \
 --separator-color=$DEFAULT   \
