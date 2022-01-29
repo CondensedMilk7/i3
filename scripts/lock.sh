@@ -46,7 +46,6 @@ i3lock \
 --greeter-font=$FONT         \
 --radius=140                 \
 \
---screen 1                   \
 --blur 5                     \
 --clock                      \
 --indicator                  \
