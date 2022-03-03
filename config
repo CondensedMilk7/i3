@@ -76,7 +76,8 @@ set $runmenu "rofi -modi drun,run -show drun"
 set $terminal alacritty
 set $browser brave
 set $IDE code
-set $screenshotapp scrot
+set $screenshotapp xfce4-screenshooter -r
+set $filemanager thunar
 
 # Launch run menu
 bindsym $mod+d exec $runmenu
@@ -91,13 +92,13 @@ bindsym $mod+c exec $IDE
 bindsym $mod+b exec $browser
 
 # Run file manager
-bindsym $mod+Shift+Return exec $terminal -e ranger
+bindsym $mod+Shift+Return exec $filemanager
 
 # Launch music player
 bindsym $mod+Shift+m exec $terminal ncmpcpp
 
 # Take screenshot
-bindsym Print exec $screenshotapp && notify-send "Screenshot taken" 
+bindsym Print exec $screenshotapp
 
 # Quick note
 for_window [ title="quicknote_window" ] floating enable
@@ -275,19 +276,19 @@ client.urgent                   $ubgcolor       $ubgcolor               $textcol
 #######################################################################
 #
 # Wallpaper file
-set $wallpaper ~/Pictures/Wallpapers/abstract-neon-sunset-landscape-digital-art-minimalist-uhdpaper.com-4K-54.jpg
+set $wallpaper ~/Pictures/Wallpapers/vapor-city.jpg
 
 # Set wallpaper
-exec_always feh --bg-fill $wallpaper
+exec_always feh --bg-fill $wallpaper &
 
 # Compositor (launches compton and if it fails, attempts picom)
-exec ~/.config/i3/scripts/compositor.sh
+exec ~/.config/i3/scripts/compositor.sh &
 
 # Use full rgb spectrum for hdmi output
-exec xrandr --output HDMI1 --set "BroadcastRGB" "Full"
+exec xrandr --output HDMI1 --set "BroadcastRGB" "Full" &
 
 # Polybar
-exec_always --no-startup-id ~/.config/polybar/launch-multi-monitor.sh
+exec_always --no-startup-id ~/.config/polybar/launch-multi-monitor.sh &
 
 # mpd
-exec_always --no-startup-id mpd
+exec_always --no-startup-id mpd &
