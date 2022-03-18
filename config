@@ -17,14 +17,14 @@ font pango:FontAwesome, JetBrains Mono Regular 12
 
 # Disable titlebars
 # You can also use any non-zero value if you'd like to have a border
-for_window [class=".*"] border pixel 2
+for_window [class=".*"] border pixel 0
 
 # Gaps
 gaps inner 8
 gaps outer 8
 
 # Activate smart borders (always)
-smart_borders on
+# smart_borders on
 
 # The combination of xss-lock, nm-applet and pactl is a popular choice, so
 # they are included here as an example. Modify as you see fit.
@@ -276,7 +276,7 @@ client.urgent                   $ubgcolor       $ubgcolor               $textcol
 #######################################################################
 #
 # Wallpaper file
-set $wallpaper ~/Pictures/Wallpapers/vapor-city.jpg
+set $wallpaper ~/Pictures/Wallpapers/arch-tokyo-light.png
 
 # Set wallpaper
 exec_always feh --bg-fill $wallpaper &
