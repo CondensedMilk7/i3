@@ -1,4 +1,4 @@
-# My i3 Configuration
+# My i3-gaps Configuration
 
 This is the configuration file for my i3 window manager.
 
