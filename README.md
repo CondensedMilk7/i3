@@ -4,6 +4,8 @@ This is the configuration file for my i3 window manager.
 
 ## Screenshots
 
+### With polybar
+
 ![](./screenshots/minimal-polybar.png)
 
 ### With i3blocks
