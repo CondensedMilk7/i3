@@ -288,7 +288,7 @@ exec ~/.config/i3/scripts/compositor.sh &
 exec xrandr --output HDMI1 --set "BroadcastRGB" "Full" &
 
 # Polybar
-exec_always --no-startup-id ~/.config/polybar/launch-multi-monitor.sh &
+exec_always --no-startup-id ~/.config/polybar/launch.sh &
 
 # mpd
 exec_always --no-startup-id mpd &
