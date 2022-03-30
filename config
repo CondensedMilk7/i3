@@ -17,14 +17,14 @@ font pango:FontAwesome, JetBrains Mono Regular 12
 
 # Disable titlebars
 # You can also use any non-zero value if you'd like to have a border
-for_window [class=".*"] border pixel 0
+for_window [class=".*"] border pixel 3
 
 # Gaps
 gaps inner 8
 gaps outer 8
 
 # Activate smart borders (always)
-# smart_borders on
+smart_borders on
 
 # The combination of xss-lock, nm-applet and pactl is a popular choice, so
 # they are included here as an example. Modify as you see fit.
@@ -73,7 +73,7 @@ bindsym $mod+Shift+Control+x exec poweroff
 bindsym $mod+Ctrl+l exec ~/.config/i3/scripts/lock.sh
 # Default Applications
 set $runmenu "rofi -modi drun,run -show drun"
-set $terminal alacritty
+set $terminal kitty
 set $browser brave
 set $IDE code
 set $screenshotapp xfce4-screenshooter -r
@@ -101,8 +101,9 @@ bindsym $mod+Shift+m exec $terminal ncmpcpp
 bindsym Print exec $screenshotapp
 
 # Quick note
+# The command might depend on the terminal app
 for_window [ title="quicknote_window" ] floating enable
-bindsym $mod+n exec $terminal -t quicknote_window -e ~/.config/i3/scripts/quicknote.sh 
+bindsym $mod+n exec $terminal -T "quicknote_window" ~/.config/i3/scripts/quicknote.sh 
 
 # change focus
 bindsym $mod+$left focus left
@@ -232,20 +233,23 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-# Window Colors
-set $bgcolor #565f89
-set $abgcolor #7dcfff
-set $ibgcolor #1a1b26
-set $textcolor #c0caf5
-set $atextcolor #1a1b26
-set $itextcolor #9aa5ce
-set $ubgcolor #f7768e
+# Window Colors taken from ~/.Xresources
+# Not all colors are utilized here, but you can try to use them.
+set_from_resource $bg background
+set_from_resource $fg foreground
+set_from_resource $red color1
+set_from_resource $green color2
+set_from_resource $yellow color3
+set_from_resource $blue color4
+set_from_resource $magenta color5
+set_from_resource $cyan color6
+set_from_resource $white color7
 
 #                               border          background              text            indicator
-client.focused                  $bgcolor        $abgcolor               $atextcolor      $bgcolor
-client.unfocused                $ibgcolor       $ibgcolor               $textcolor      $ibgcolor
-client.focused_inactive         $ibgcolor       $ibgcolor               $itextcolor      $ibgcolor
-client.urgent                   $ubgcolor       $ubgcolor               $textcolor      $ubgcolor
+client.focused                  $blue           $blue                   $bg             $bg
+client.unfocused                $bg             $bg                     $fg             $bg
+client.focused_inactive         $bg             $bg                     $fg             $bg
+client.urgent                   $red            $red                    $white          $red
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
@@ -275,14 +279,12 @@ client.urgent                   $ubgcolor       $ubgcolor               $textcol
 #
 #######################################################################
 #
-# Wallpaper file
-set $wallpaper ~/Pictures/Wallpapers/arch-tokyo-light.png
 
-# Set wallpaper
-exec_always feh --bg-fill $wallpaper &
+# Set wallpaper and color scheme
+exec_always wal -R &
 
 # Compositor (launches compton and if it fails, attempts picom)
-exec ~/.config/i3/scripts/compositor.sh &
+exec picom &
 
 # Use full rgb spectrum for hdmi output
 exec xrandr --output HDMI1 --set "BroadcastRGB" "Full" &

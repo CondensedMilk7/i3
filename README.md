@@ -2,6 +2,10 @@
 
 This is the configuration file for my i3 window manager.
 
+> **IMPORTANT NOTE:** I have made significant changes in my configuration and
+> it no longer looks like what the screenshots show. I will update the readme
+> and make all dotfiles more managable eventually.
+
 ## Screenshots
 
 ### With polybar
